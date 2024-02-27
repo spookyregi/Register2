@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Register.UserControls.TermekFelveszUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Register.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="AliceBlue">
+        <StackPanel Width="500">
+            <Label Content="Termék neve" HorizontalAlignment="Center" FontWeight="Bold" />
+            <TextBox x:Name="tbUjNev"/>
+            <Label Content="Termék ára" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="tbUjAr"/>
+            <Label Content="Készlet db" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBox x:Name="tbUjKeszlet"/>
+            <Label Content="Kategória" HorizontalAlignment="Center" FontWeight="Bold"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="cbUjKategoria" Width="230" SelectionChanged="ClearTB"/>
+                <Label Content="Egyéb: "/>
+                <TextBox x:Name="tbUjKategoria" Width="224" GotFocus="ClearCombo"/>
+            </StackPanel>
+
+            <Button Content="Termék felvétele" Click="btnTermekFelvetel" Width="500"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Width="444">
+            <Button Content="Kilépés" Click="btnExit"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
